@@ -53,7 +53,7 @@
         </div>
         <div class="footer-bottom">
             <div class="left">
-                KOODING.com &copy; 2021 . All rights reserved
+                MissCare.com &copy; {{date('Y')}} . All rights reserved
             </div>
             <div class="right">
                 <a href="{{route('client.termsofuse')}}">Điều khoản sử dụng</a>

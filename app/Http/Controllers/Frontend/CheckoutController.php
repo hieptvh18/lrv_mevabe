@@ -28,10 +28,11 @@ class CheckoutController extends Controller
     {
         $cartData = Session::get('carts');
         if(Auth::check()){
-            $cartData = Cart::where('user_id', Auth::user()->id)->count();
+            $cartData = Cart::where('user_id', Auth::user()->id)->get();
+            $cartData = $this->formatedCartLoginData($cartData);
         }
         
-        if ($cartData == 0) {
+        if (!$cartData || (is_array($cartData) && empty($cartData))) {
             return redirect(route('client.cart'));
         }
 
@@ -42,6 +43,29 @@ class CheckoutController extends Controller
             'provinces' => $provinces,
             'carts' => $cartData,
         ]);
+    }
+
+    private function formatedCartLoginData($cartData){
+        $dataResp = [];
+
+        if($cartData->count()){
+            foreach($cartData as $key => $item){
+                $productId = $item->product_id;
+                $product = Product::findOrFail($productId);
+                $dataResp[$key] = [
+                    "id" => $item->id,
+                    "product_id" => $item->product_id,
+                    "color_id" => $item->color_id,
+                    "size_id" => $item->size_id,
+                    "price" => $product->price,
+                    "discount" => $product->discount,
+                    "avatar" => $product->avatar,
+                    "slug" => $product->slug,
+                    "quantity" => $item->quantity
+                ];
+            }
+        }
+        return $dataResp;
     }
 
     // handle checkout

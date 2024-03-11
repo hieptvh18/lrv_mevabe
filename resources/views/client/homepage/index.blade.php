@@ -1,6 +1,6 @@
 @extends('layouts.layout-client')
 
-@section('page-title', 'Trang chủ | Kooding')
+@section('page-title', 'Trang chủ | Miss Care')
 @section('main')
 
     <main class="body__index">
@@ -8,12 +8,12 @@
         <div class="banner single-item">
             <div class="banner-item">
                 <div class="banner_imgBox">
-                    <img src="{{ asset('assets/images/categories/1920x848-pc.jpg') }}" alt="" width="100%">
+                    <img src="{{ asset('assets/images/mevabe-banner1.jpg') }}" alt="" width="100%">
                 </div>
             </div>
             <div class="banner-item">
                 <div class="banner_imgBox">
-                    <img src="{{ asset('assets/images/categories/WEB-1-1.jpg') }}" alt="" width="100%">
+                    <img src="{{ asset('assets/images/thucphamsachonline-shopmebauembe-2048x779.png') }}" alt="" width="100%">
                 </div>
             </div>
         </div>
@@ -131,7 +131,7 @@
         <div class="product-news trending">
             <div class="product-news__title mb-3">
                 <div class="title-text">
-                    Đang là xu hướng
+                    Sản phẩm bán chạy
                 </div>
                 <!-- <div class="toggle-filter " style="display: flex;align-items: center;">
                                             <span class="pb-2 pr-3">Nam</span>
@@ -181,7 +181,7 @@
         <div class="slider-album pb-4">
             <div class="slide-title text-center pt-4 pb-2 text-light">
                 <h3>#{{ $settings->web_name }}</h3>
-                <p>Chia sẽ khoảnh khắc của bạn với KOODING TRÊN <i class="fab fa-instagram text-light"
+                <p>Chia sẽ khoảnh khắc của bạn với Miss Care TRÊN <i class="fab fa-instagram text-light"
                         aria-hidden="true"></i> hoặc <i class="fab fa-twitter text-light" aria-hidden="true"></i>
 
                 </p>

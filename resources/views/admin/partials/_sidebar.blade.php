@@ -102,7 +102,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{route('websettings.edit')}}">
                 <i class="fas fa-tv menu-icon"></i>
-                <span class="menu-title">Giao diện</span>
+                <span class="menu-title">Cài đặt</span>
             </a>
 
         </li>

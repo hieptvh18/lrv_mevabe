@@ -1,15 +1,15 @@
 @extends('layouts.layout-client')
 
-@section('page-title', 'Trang chủ | Kooding')
+@section('page-title', 'Trang chủ | Miss Care')
 @section('main')
 
 <main class="body__album">
   <div class="album__header">
     <div class="album__title">
-      <h3>#KOODING</h3>
+      <h3>#MISSCARE</h3>
     </div>
     <div class="album__text">
-      Chia sẻ các mặt hàng yêu thích của bạn với KOODING trên Instagram hoặc TikTok để nhận khoản tín dụng $ 5 cho lần mua hàng tiếp theo của bạn và có cơ hội được giới thiệu trên thư viện của chúng tôi!
+      Chia sẻ các mặt hàng yêu thích của bạn với Miss Care trên Instagram hoặc TikTok để nhận khoản tín dụng $ 5 cho lần mua hàng tiếp theo của bạn và có cơ hội được giới thiệu trên thư viện của chúng tôi!
     </div>
   </div>
   <div class="album__infor">
@@ -19,7 +19,7 @@
           <i class="fa fa-camera" aria-hidden="true"></i>
         </span>
         <span class="step-name">
-          <p>1. Chụp ảnh hoặc quay video giới thiệu trang phục KOODING của bạn</p>
+          <p>1. Chụp ảnh hoặc quay video giới thiệu trang phục Miss Care của bạn</p>
         </span>
       </li>
       <li id="two" class="album__soc">
@@ -27,7 +27,7 @@
           <i class="fa fa-share" aria-hidden="true"></i>
         </span>
         <span class="step-name">
-          <p>2. Thep dõi @KOODING và gắn thẻ @KOODING trên bài đăng của bạn</p>
+          <p>2. Thep dõi @MissCare và gắn thẻ @MissCare trên bài đăng của bạn</p>
         </span>
       </li>
       <li id="three" class="album__soc">
@@ -35,7 +35,7 @@
           <i class="fa fa-hashtag" aria-hidden="true"></i>
         </span>
         <span class="step-name">
-          <p>3. Đề cập đến #KOODING và số đơn đặt hàng của bạn trong chú thích</p>
+          <p>3. Đề cập đến #Miss Care và số đơn đặt hàng của bạn trong chú thích</p>
         </span>
       </li>
       <li id="four" class="album__soc">

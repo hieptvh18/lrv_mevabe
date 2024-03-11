@@ -1,6 +1,6 @@
 @extends('layouts.layout-client')
 
-@section('page-title', 'Điều khoản | Kooding')
+@section('page-title', 'Điều khoản | Miss Care')
 @section('main')
 
  <main class="dieuKhoan">
@@ -14,12 +14,12 @@
             <h2>ĐIỀU KHOẢN SỬ DỤNG</h2>
         </div>
         <p>
-            Chào mừng đến với Trang web KOODING.com ("Trang web"). Kooding, Inc. cung cấp Trang web này như một dịch
+            Chào mừng đến với Trang web MissCare.com ("Trang web"). Miss Care, Inc. cung cấp Trang web này như một dịch
             vụ cho khách hàng của mình. Vui lòng xem xét kỹ các điều khoản chi phối việc bạn sử dụng Trang web của
             chúng tôi ("Thỏa thuận") sau đây. Xin lưu ý rằng việc bạn sử dụng Trang web của chúng tôi cấu thành việc
             bạn đồng ý tuân theo và bị ràng buộc bởi các điều khoản này. Nếu bạn không đồng ý với các điều khoản
             này, vui lòng không sử dụng Trang web này. <br>
-            KOODING.com bảo lưu quyền, vào bất kỳ lúc nào, sửa đổi, thay đổi hoặc cập nhật các Điều khoản của Trang
+            MissCare.com bảo lưu quyền, vào bất kỳ lúc nào, sửa đổi, thay đổi hoặc cập nhật các Điều khoản của Trang
             web này và bạn đồng ý bị ràng buộc bởi những sửa đổi, thay đổi hoặc cập nhật đó. Bạn nên truy cập trang
             này định kỳ để xem lại các điều khoản sử dụng của mình ngay cả khi bạn có thể đánh dấu một phần cụ thể
             của Trang web này.
@@ -100,13 +100,13 @@
             bất kỳ Nội dung gửi nào (bao gồm cả nhận xét hoặc đánh giá) vì bất kỳ lý do gì.</p>
         <h3>SỞ HỮU TRÍ TUỆ</h3>
         <p>Tất cả văn bản, đồ họa, biểu tượng nút, hình ảnh, đoạn âm thanh và phần mềm (gọi chung là “Nội dung”),
-            chỉ thuộc về Kooding, Inc. hoặc các chi nhánh của nó. Việc thu thập, sắp xếp và tập hợp tất cả Nội dung
-            trên Trang web này (“Tổng hợp”) thuộc quyền sở hữu độc quyền của Kooding, Inc. hoặc các chi nhánh của
-            nó. Tất cả phần mềm được sử dụng trên Trang web này (“Phần mềm”) là tài sản của Kooding, Inc., các chi
-            nhánh hoặc nhà cung cấp Phần mềm của Kooding, Inc. Nội dung, Biên dịch và Phần mềm đều được bảo vệ bởi
-            luật bản quyền của Hoa Kỳ và quốc tế. KOODING, KOODING.COM và các biểu tượng khác, biểu tượng thiết kế,
+            chỉ thuộc về MissCare, Inc. hoặc các chi nhánh của nó. Việc thu thập, sắp xếp và tập hợp tất cả Nội dung
+            trên Trang web này (“Tổng hợp”) thuộc quyền sở hữu độc quyền của MissCare, Inc. hoặc các chi nhánh của
+            nó. Tất cả phần mềm được sử dụng trên Trang web này (“Phần mềm”) là tài sản của MissCare, Inc., các chi
+            nhánh hoặc nhà cung cấp Phần mềm của MissCare, Inc. Nội dung, Biên dịch và Phần mềm đều được bảo vệ bởi
+            luật bản quyền của Hoa Kỳ và quốc tế. MissCare, MissCare.COM và các biểu tượng khác, biểu tượng thiết kế,
             khẩu hiệu, khẩu hiệu, tên thương mại hoặc từ ngữ là nhãn hiệu, nhãn hiệu hoặc nhãn hiệu dịch vụ đã đăng
-            ký của Kooding, Inc., các chi nhánh, nhà cung cấp hoặc bên thứ ba của Kooding, Inc. Việc sử dụng bất kỳ
+            ký của MissCare, Inc., các chi nhánh, nhà cung cấp hoặc bên thứ ba của MissCare, Inc. Việc sử dụng bất kỳ
             nhãn hiệu hoặc nhãn hiệu dịch vụ nào của chúng tôi mà không có sự đồng ý rõ ràng bằng văn bản của chúng
             tôi đều bị nghiêm cấm. Bạn không được sử dụng các nhãn hiệu hoặc nhãn hiệu dịch vụ của chúng tôi liên
             quan đến bất kỳ sản phẩm hoặc dịch vụ nào theo bất kỳ cách nào có thể gây nhầm lẫn. Bạn không được sử
@@ -114,21 +114,21 @@
             của chúng tôi. Bạn không được sử dụng bất kỳ nhãn hiệu hoặc nhãn hiệu dịch vụ nào của chúng tôi trong
             các thẻ meta mà không có sự đồng ý rõ ràng trước đó.</p>
         <h3>TỪ CHỐI VÀ GIỚI HẠN TRÁCH NHIỆM PHÁP LÝ</h3>
-        <p>KOODING.com cung cấp tài liệu trên trang web này "nguyên trạng" mà không có bất kỳ bảo đảm nào, dù rõ
+        <p>MissCare.com cung cấp tài liệu trên trang web này "nguyên trạng" mà không có bất kỳ bảo đảm nào, dù rõ
             ràng hay ngụ ý, bao gồm nhưng không giới hạn, bảo đảm về tiêu đề, bảo đảm ngụ ý về khả năng bán được,
-            tính phù hợp cho một mục đích cụ thể hoặc không vi phạm quyền sở hữu trí tuệ. KOODING.com từ chối rõ
-            ràng mọi nghĩa vụ cập nhật hoặc chỉnh sửa tài liệu trên trang này, mặc dù KOODING.com có ​​thể sửa đổi
+            tính phù hợp cho một mục đích cụ thể hoặc không vi phạm quyền sở hữu trí tuệ. MissCare.com từ chối rõ
+            ràng mọi nghĩa vụ cập nhật hoặc chỉnh sửa tài liệu trên trang này, mặc dù MissCare.com có ​​thể sửa đổi
             tài liệu bất cứ lúc nào mà không cần thông báo. Khi bạn sử dụng trang web này, bạn thừa nhận rằng việc
             sử dụng của bạn là rủi ro duy nhất của bạn và bạn chịu hoàn toàn trách nhiệm về mọi chi phí liên quan
             đến tất cả các dịch vụ bảo dưỡng hoặc sửa chữa cần thiết của bất kỳ thiết bị nào bạn sử dụng liên quan
-            đến việc sử dụng trang web này. Bạn cũng thừa nhận rằng KOODING.com sẽ không chịu trách nhiệm về bất kỳ
+            đến việc sử dụng trang web này. Bạn cũng thừa nhận rằng MissCare.com sẽ không chịu trách nhiệm về bất kỳ
             thiệt hại nào hoặc bất kỳ hình thức nào liên quan đến việc bạn sử dụng trang web này.</p>
         <h3>THỎA THUẬN VÀ LỜI CẢM ƠN</h3>
         <p>(Những) người mua đã đọc kỹ và đồng ý với các Điều khoản và Điều kiện này. Người mua ủy quyền cho
-            KOODING.com xác minh tín dụng của Công ty và / hoặc (các) cá nhân có (các) chữ ký xuất hiện trên tài
+            MissCare.com xác minh tín dụng của Công ty và / hoặc (các) cá nhân có (các) chữ ký xuất hiện trên tài
             liệu này hoặc các tài liệu khác được chỉ định ở trên. Người mua và (các) người bảo lãnh cho phép (các)
             ngân hàng và / hoặc cơ quan tham chiếu kinh doanh của mình tiết lộ thông tin tín dụng của Người mua và /
-            hoặc (các) Người bảo lãnh theo yêu cầu của KOODING.com</p>
+            hoặc (các) Người bảo lãnh theo yêu cầu của MissCare.com</p>
 
             <div id="dk_title2" class="dk_title">
                 <h2>thanks you ❤❤❤</h2>

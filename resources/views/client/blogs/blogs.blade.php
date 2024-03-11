@@ -1,12 +1,12 @@
 
 @extends('layouts.layout-client')
 
-@section('page-title', 'Tin tức | Kooding')
+@section('page-title', 'Tin tức | Miss Care')
 @section('main')
 
 <main class="container">
     <div class="mainheading">
-        <h1 class="sitetitle"><a href="index.html">Blog Kooding</a></h1>
+        <h1 class="sitetitle"><a href="index.html">Blog Miss Care</a></h1>
         <p class="lead">
             Cập nhận tin tức mới nhất của chúng tôi để biết thêm nhiều chương trình khuyến mãi
         </p>

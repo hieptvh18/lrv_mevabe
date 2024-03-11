@@ -1,6 +1,6 @@
 @extends('layouts.layout-client')
 
-@section('page-title', 'Cửa hàng | Kooding')
+@section('page-title', 'Cửa hàng | Miss Care')
 @section('main')
 
     <main class="body__product">
@@ -14,7 +14,7 @@
             <div class="proH__text2">
                 <p>Bạn đang tìm kiếm những sản phẩm hoàn hảo phù hợp với mọi thứ hay chiếc bàn đẹp nhất lấy cảm
                     hứng từ
-                    KOODING</p>
+                    Miss Care</p>
             </div>
         </div>
 
@@ -64,7 +64,7 @@
                             <input type="hidden" name="min_price" id="hidden_minimum_price" value="1000">
                             <input type="hidden" name="max_price" id="hidden_maximum_price" value="10000000">
                             <p id="price_show">
-                                show price filter
+                                Chọn khoảng giá
                             </p>
                             <div class="price_range" id="price_range">
 
@@ -108,8 +108,10 @@
                                 </span>
                             </div>
                             <div class="proC__sale">
-                                <p class="item__sale">
+                                @if ($product->discount)
+                                <p class="item__sale">Sale
                                     {{ number_format(($product->discount / $product->price) * 100, 0, ',') }}%</p>
+                                @endif
                             </div>
                         </form>
                     @endforeach

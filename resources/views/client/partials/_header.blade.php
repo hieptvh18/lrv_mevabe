@@ -22,7 +22,7 @@
                 <a href="#" class="swiper-slide slider-top2">Vận chuyển nhanh chóng và tin cậy 🚛</a>
             @else
                 {{-- default --}}
-                <a href="#" class="swiper-slide slider-top1">Nội thất sang trọng cho cân nhà của bạn với Kooding.</a>
+                <a href="#" class="swiper-slide slider-top1">Thời trang & Đồ dùng cho bé với MissCare.</a>
                 <a href="#" class="swiper-slide slider-top2">Vận chuyển nhanh chóng và tin cậy 🚛</a>
             @endif
         </div>
@@ -336,7 +336,7 @@
                         class="{{ Route::currentRouteName() == 'client.news' ? 'menu-active' : '' }}">Tin tức</a>
                 </li>
                 <li><a href="{{ route('client.social') }}"
-                        class="{{ Route::currentRouteName() == 'client.social' ? 'menu-active' : '' }}">#KOODING</a>
+                        class="{{ Route::currentRouteName() == 'client.social' ? 'menu-active' : '' }}">#MISSCARE</a>
                 </li>
                 @if (Auth::check() && Auth::user()->role_id != 1)
                     <li><a href="{{ route('admin.dashboard') }}">Trang quản trị <i class="ml-2 fa fa-unlock-alt"

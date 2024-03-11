@@ -1,6 +1,6 @@
 @extends('layouts.layout-client')
 
-@section('page-title', 'Chi tiết sản phẩm | Kooding')
+@section('page-title', 'Chi tiết sản phẩm | Miss Care')
 @section('main')
 
 <main>

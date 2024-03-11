@@ -38,7 +38,9 @@ class DashboardController extends Controller
         $totalOrder = Order::whereYear('created_at',$year)->get()->count();
         $donChuaXuLi = Order::whereYear('created_at',$year)->where('status', 0)->get()->count();
         $tongDoanhThuNam = Order::where('status',2)
+        ->whereYear('created_at',$year)
         ->sum('total_price');
+      
         // dd($tongDoanhThuNam);
         $totalProduct = Product::count();
 

@@ -1,6 +1,6 @@
 @extends('layouts.layout-client')
 
-@section('page-title', 'Chi tiết sản phẩm | Kooding')
+@section('page-title', 'Chi tiết sản phẩm | MissCare')
 @section('main')
     <main class="body__details">
         <div class="product-page pt-4">
@@ -202,7 +202,7 @@
                             </div>
                             <div class="content__detail__info">
                                 <div id="4" class="info__title">
-                                    <p>Giới thiệu Kooding</p>
+                                    <p>Giới thiệu MissCare</p>
                                     <div class="info__icon">
                                         <i class="fas fa-plus"></i>
                                     </div>

@@ -1,6 +1,6 @@
 @extends('layouts.layout-admin')
 
-@section('page-title', 'Dashboard | KOODING')
+@section('page-title', 'Dashboard | MISS CARE')
 
 @section('main')
     <div class="content-wrapper">
@@ -20,9 +20,9 @@
                                     <i class="mdi mdi-calendar"></i> Thống kê theo năm
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
-                                    <a class="dropdown-item" href="?_year=2022">Năm hiện tại {{ date('Y') }}</a>
-                                    <a class="dropdown-item" href="?_year=2021">Năm 2021</a>
-                                    <a class="dropdown-item" href="?_year=2020">Năm 2020</a>
+                                    <a class="dropdown-item" href="?_year=2024">Năm hiện tại {{ date('Y') }}</a>
+                                    <a class="dropdown-item" href="?_year=2023">Năm 2023</a>
+                                    <a class="dropdown-item" href="?_year=2022">Năm 2022</a>
                                 </div>
                             </div>
                         </div>

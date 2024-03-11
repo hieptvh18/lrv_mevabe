@@ -1,6 +1,6 @@
 @extends('layouts.layout-client')
 
-@section('page-title', 'Cửa hàng | Kooding')
+@section('page-title', 'Thanh toán | Miss Care')
 @section('main')
     <main class="body__order">
         @if (session('payment-success'))
@@ -27,7 +27,7 @@
                     </div>
                     <div class="address">
                         <label for="">Họ tên</label>
-                        <input name="fullname" id="fullname" type="text" value="{{ Auth::check() ?? Auth::user()->name }}">
+                        <input name="fullname" id="fullname" type="text" value="{{ Auth::check() ? Auth::user()->name : '' }}">
                         <label for="fullname" class="error" style="display: none;"></label>
 
                     </div>
@@ -104,8 +104,11 @@
                     </div>
                     <div class="order__bottom__content">
 
-                        @php $total = 0; @endphp
-                        @foreach (session('carts') as $item)
+                        @php 
+                        $total = 0; 
+                        // dd($carts);
+                        @endphp
+                        @foreach ($carts as $item)
                             @php
                                 $tt = ($item['price'] - $item['discount']) * $item['quantity'];
                             @endphp
@@ -209,7 +212,7 @@
                         <div class="contnet__all">
 
                             <span><b>Số tiền phải thanh tóan</b>:
-                                {{ session('newPrice') ? number_format(session('newPrice'), 0, ',') : number_format($total, 0, ',') }}
+                                {{ session('newPrice') ? number_format(session('newPrice'), 0, ',') : number_format((int)$total + 30000, 0, ',') }}
                                 đ</span>
 
                             <p></p>

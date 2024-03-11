@@ -1,6 +1,6 @@
 @extends('layouts.layout-client')
 
-@section('page-title', 'Cửa hàng | Kooding')
+@section('page-title', 'Thanh toán | Miss Care')
 @section('main')
     <main class="body__order">
         @if (session('payment-success'))

@@ -8,7 +8,7 @@
     <!-- ico -->
     <link rel="shortcut icon" type="image/png" href="{{asset('assets/images/layout/kooding-app-icon.ico')}}"/>
 
-    <title>KOODING - 404</title>
+    <title>Miss Care - 404</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('assets/vendors/feather/feather.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/ti-icons/css/themify-icons.css')}}">
@@ -42,7 +42,7 @@
             </div>
             <div class="row mt-5">
               <div class="col-12 mt-xl-2">
-                <p class="text-white font-weight-medium text-center">Copyright &copy; 2021  All rights reserved.</p>
+                <p class="text-white font-weight-medium text-center">Copyright &copy; {{date('Y')}}  All rights reserved.</p>
               </div>
             </div>
           </div>

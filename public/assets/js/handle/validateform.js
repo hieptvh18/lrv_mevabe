@@ -56,7 +56,7 @@ $("#checkout").validate({
     rules: {
         fullname: {
             required: true,
-            minlength: 6,
+            minlength: 2,
             maxlength: 225,
         },
         xa: {
@@ -84,7 +84,7 @@ $("#checkout").validate({
         phone:"Số điện thoại có độ dài 10-11 kí tự số!",
         fullname:{
             required:true,
-            minlength:"Tên người nhận ít nhất 6 kí tự",
+            minlength:"Tên người nhận ít nhất 2 kí tự",
             maxlength:"Tên người nhận tối đa nhất 225 kí tự",
         },
         address:{

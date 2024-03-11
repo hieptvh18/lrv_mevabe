@@ -1,6 +1,6 @@
 @extends('layouts.layout-client')
 
-@section('page-title', 'Profile | Kooding')
+@section('page-title', 'Profile | Miss Care')
 @section('main')
 
     <main class="body__acc">

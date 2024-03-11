@@ -1,6 +1,6 @@
 @extends('layouts.layout-client')
 
-@section('page-title', 'Cửa hàng | Kooding')
+@section('page-title', 'Giỏ hàng | Miss Care')
 @section('main')
 
     <main class="body__cart">
@@ -21,7 +21,7 @@
                     <div class="cart__checkout__title">
                         <span class="cart__title__text1">Những hạng mục của bạn</span>
                         <span class="cart__title__text2">Số lượng</span>
-                        <span class="cart__title__text3">Giá vật phẩm</span>
+                        <span class="cart__title__text3">Giá sản phẩm</span>
                     </div>
                     <div class="cart__checkout__content">
                         <ul class="cart__items">

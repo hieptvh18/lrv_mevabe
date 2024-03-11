@@ -1,13 +1,13 @@
 @extends('layouts.layout-admin')
 
-@section('page-title', 'Giao diện')
+@section('page-title', 'Cài đặt')
 @section('main')
 
 
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Quản lí giao diện</h4>
+                <h4 class="card-title">Cài đặt website</h4>
                 <p class="card-description">
                     Basic form elements
                 </p>

@@ -1,12 +1,12 @@
 
 @extends('layouts.layout-client')
 
-@section('page-title', 'Tin tức | Kooding')
+@section('page-title', 'Tin tức | Miss Care')
 @section('main')
 
 <main class="container">
     <div class="mainheading">
-        <h1 class="sitetitle concax"><a href="{{route('client.news')}}">Blog Kooding</a></h1>
+        <h1 class="sitetitle concax"><a href="{{route('client.news')}}">Blog Miss Care</a></h1>
         <p class="lead">
             {{$post->short_desc}}
         </p>
