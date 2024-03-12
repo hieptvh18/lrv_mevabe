@@ -8,7 +8,7 @@
         <h4 class="card-title text-center">KHO HÀNG</h4>
         @if (session('msg-er'))
             <div class="alert alert-danger">{{ session('msg-er') }}</div>
-        @endif
+        @endif  
         @if (session('msg-suc'))
             <div class="alert alert-success">{{ session('msg-suc') }}</div>
         @endif
@@ -16,7 +16,7 @@
 
         <div class="search ">
             <form action="" method="GET" class="d-flex">
-                <input type="search" value="{{ old('keyword_stock') }}" name="keyword_stock" placeholder="search stock"
+                <input type="search" value="{{ old('keyword_stock') }}" name="keyword_stock" placeholder="Tìm kiếm"
                     class="form-control-sm" required style="height:33px;border:1px solid #ccc;border-radius:10px">
                 <button class="btn btn-outline-info btn-sm">Tìm kiếm</button>
             </form>

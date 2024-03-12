@@ -74,7 +74,7 @@
                             @enderror
                         </div>
                         <div class="form-group col-4">
-                            <label for="" class="">Thuong Hieu</label>
+                            <label for="" class="">Thương hiệu</label>
                             <select id="" name="brand_id" class="form-control">
                                 @foreach ($listBrand as $val)
                                     <option value="{{ $val->id }}"
@@ -130,7 +130,7 @@
 
                     <div class="form-group">
                         <label >Tình trạng:</label>
-                        <input type="radio" {{$product->status == 1 ? 'checked':''}} value="1" class="ml-3 mr-2" name="status" id="status"><label for="status">Hoạt động</label>
+                        <input type="radio" {{$product->status == 1 ? 'checked':''}} value="1" class="ml-3 mr-2" name="status" id="status"><label for="status">Hiển thị</label>
                         <input type="radio" {{$product->status == 0 ? 'checked':''}} value="0" class="ml-3 mr-2" name="status" id="status2"><label for="status2">Ẩn</label>
                     </div>
 

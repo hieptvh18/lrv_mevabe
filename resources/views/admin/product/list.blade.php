@@ -97,6 +97,7 @@
                     <thead>
                         <tr>
                             <th>Select</th>
+                            <th>Mã sản phẩm</th>
                             <th>Tên
                                 <a href="{{ route('product.index') }}?_sort=true&column=name&type={{ $type }}"><i
                                         class="fas fa-sort"></i></a>
@@ -124,6 +125,7 @@
                                     <input type="checkbox" data-id={{ $val->id }} name="proIds[]"
                                         value="{{ $val->id }}">
                                 </td>
+                                <td>{{$val->id}}</td>
                                 <td>{{ $val->name }}</td>
                                 <td>{{ $val->brands->name }}</td>
                                 <td>{{ $val->categories->name }}</td>

@@ -29,7 +29,7 @@ class CommentRequest extends FormRequest
     {
         // check tu bad word with regex -> convert to ***
         return [
-            'content'=>"required|min:6|max:500",
+            'content'=>"required|min:3|max:500",
             'image'=>'nullable|mimes:jpg,png,jpeg|max:5000'
         ];
     }

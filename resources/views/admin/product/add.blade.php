@@ -84,7 +84,7 @@
                         <div class="form-group col-4">
                             <label for="" class="">Thương hiệu</label>
                             <select id="" name="brand_id" class="form-control">
-                                <option selected disabled value="">---chon thuong hieu---</option>
+                                <option selected disabled value="">---chọn thương hiệu---</option>
                                 @foreach ($brands as $val)
                                     <option value="{{ $val->id }}"
                                         {{ old('brand_id') == $val->id ? 'selected' : '' }}>{{ $val->name }}</option>
@@ -171,7 +171,7 @@
                     <div class="form-group">
                         <label >Tình trạng:</label>
                         <input checked type="checkbox" value="1" class="ml-3 mr-2" name="status" id="status" 
-                        {{old('status') == '1' ?'checked':''}}><label for="status">Hoạt động</label>
+                        {{old('status') == '1' ?'checked':''}}><label for="status">Hiển thị</label>
                     </div>
 
                     <div class="form-group">

@@ -1,6 +1,17 @@
 <!-- editor -->
 
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+{{-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> --}}
+{{-- <script src="https://cdn.tiny.cloud/1/f1w8c8l2iob3ys3gbiuyz0f1nsypgz8g392m3r6se3xkk3hw/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script> --}}
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.1.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#local-upload'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+
 <!-- plugins:js -->
 <script src="{{asset('assets/vendors/js/vendor.bundle.base.js')}}"></script>
 <!-- endinject -->
@@ -42,6 +53,15 @@
 <!-- validate form -->
 
 {{-- <script src="./public/js/validate/validatorAdmin/validator__cate.js"></script> --}}
+
+<script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+      toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    });
+</script>
+
 <!-- thống kê -->
 @yield('plugin-script')
 

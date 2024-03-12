@@ -1,6 +1,6 @@
 $(document).ready(function(){
     tinymce.init({
-        selector: 'textarea#local-upload',
+        selector: 'textarea',
         menubar: false,
         plugins: [
           'advlist autolink lists link image charmap print preview anchor',

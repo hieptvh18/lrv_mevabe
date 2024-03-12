@@ -54,15 +54,15 @@
         </div>
 
         <div class=" mb-0">
-            <div class="">
+            <div class="d-flex justify-content-between">
                 <button type="submit" class="btn btn-primary">
                     {{ __('Login') }}
                 </button>
-                @if (array_key_exists('checkout',request()->all()))
+                {{-- @if (array_key_exists('checkout',request()->all()))
                     <a href="/checkout?customer=guest" class="btn btn-primary">
-                        <span>{{__('Payment now')}}</span> <i class="fa fa-credit-card" aria-hidden="true"></i>
+                        <span>{{__('Continue Payment')}}</span> <i class="fa fa-credit-card" aria-hidden="true"></i>
                     </a>
-                @endif
+                @endif --}}
             </div>
         </div>
         <div class="d-flex justify-content-between">

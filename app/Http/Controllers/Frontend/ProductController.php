@@ -42,7 +42,8 @@ class ProductController extends Controller
         // option search
         if ($request->keyword) {
             $pageTitle = 'Kết quả tìm kiếm: ' . "'" . $request->keyword . "'";
-            $products = $products->where('products.name', 'like', '%' . $request->keyword . '%');
+            $products = $products->where('products.name', 'like', '%' . $request->keyword . '%')
+                                    ->orWhere('products.description', 'like', '%' . $request->keyword . '%');
         }
 
         // filter price

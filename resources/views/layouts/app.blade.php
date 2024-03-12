@@ -33,7 +33,7 @@
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                             <div class="brand-logo">
                                 <a href="{{route('client.home')}}">
-                                    <img src="{{ asset('assets/images/layout/logo-main.png') }}" alt="logo">
+                                    <img src="{{ asset('assets/images/logo-mevabe.png') }}" alt="logo">
                                 </a>
                             </div>
                             

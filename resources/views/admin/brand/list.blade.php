@@ -5,21 +5,21 @@
 @section('main')
 
     <div class="card-body">
-        <h4 class="card-title">Danh sách Thuong hieu</h4>
+        <h4 class="card-title">Danh sách thương hiệu</h4>
         <div class="row">
             <div class="col-8">
                 @if (session('msg-suc'))
-                    <div class="alert alert-success">{{ session('msg') }}</div>
+                    <div class="alert alert-success">{{ session('msg-suc') }}</div>
                 @endif
                 @if (session('msg-er'))
-                <div class="alert alert-danger">{{ session('msg') }}</div>
+                <div class="alert alert-danger">{{ session('msg-er') }}</div>
             @endif
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>STT</th>
                             <th>Tên</th>
-                            <th>Anh</th>
+                            {{-- <th>Anh</th> --}}
                             <th>Quản lý</th>
                         </tr>
                     </thead>
@@ -28,9 +28,9 @@
                             <tr>
                                 <td>{{ $key + 1 }}</td>
                                 <td>{{ $val->name }}</td>
-                                <td>
+                                {{-- <td>
                                     <img src="{{asset('uploads')}}/{{$val->avatar}}" width="40px" alt="">
-                                </td>
+                                </td> --}}
                                 <td>
                                    
                                         <a href="{{ route('brand.destroy', $val->id) }}" onclick="
@@ -52,18 +52,18 @@
                 </table>
             </div>
             <div class="col-4">
-                <h5>Them moi thuong hieu thoi trang</h5>
+                <h5>Thêm mới thương hiệu</h5>
                 <form action="{{route('brand.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="">Ten thuong hieu</label>
+                        <label for="">Tên thương hiệu</label>
                         <input type="text" name="name" value="{{old('name')}}" placeholder="Enter name brand" class="form-control">
                         @error('name')
                             <div class="text-danger">{{$message}}</div>   
                         @enderror
                     </div>
 
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label>File upload</label>
                         <input name="avatar" type="file" class="form-control file-upload-info" placeholder="Upload Image"
                             id="upload" onchange="previewImg()">
@@ -74,7 +74,7 @@
                         <div id="displayImg" class="" style="width: 200px;">
 
                         </div>
-                    </div>
+                    </div> --}}
 
                     <button class="mt-3 btn btn-primary">Submit</button>
                 </form>

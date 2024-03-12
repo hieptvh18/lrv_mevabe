@@ -154,24 +154,23 @@
                         </div>
 
 
-                        <div class="order__bottom__item mt-3 d-flex align-items-center justify-content-between">
+                        {{-- <div class="order__bottom__item mt-3 d-flex align-items-center justify-content-between">
                             <span> <input type="radio" name="method" id="method3" value="2"> <label class="m-0 pl-3"
                                     for="method3">Thanh toán
                                     Vnpay</label></span>
                             <div>
                                 <img src="{{ asset('assets/images/layout/vnpay.png') }}" alt="" width="100px">
                             </div>
-                        </div>
+                        </div> --}}
 
-                        <div class="order__bottom__item mt-3 d-flex align-items-center justify-content-between">
+                        {{-- <div class="order__bottom__item mt-3 d-flex align-items-center justify-content-between">
                             <span> <input type="radio" name="method" id="method2" value="1"> <label class="m-0 pl-3"
                                     for="method2">Thanh toán
                                     Paypal</label></span>
                             <div>
-                                {{-- <img src="{{ asset('assets/images/layout/paypal.png') }}" alt="" width="100px"> --}}
                                 <div id="paypal-button"></div>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
                 </div>
@@ -183,12 +182,16 @@
                         <h3>Tóm tắt nhanh</h3>
                     </div>
                     <div class="right__content__body">
-                        <div class="content__input--vocher" style="border:1px solid #d7d7d7;border-radius: 5px;">
-                            <input id="vocher" name="code" value="" type="text" placeholder="Nhập phiếu giảm giá">
-                            <div class="sub__vorcher">
-                                <button type="submit" name="btn_apply_voucher" value="true">Áp dụng</button>
+                        @if (auth()->check())
+                            <div class="content__input--vocher" style="border:1px solid #d7d7d7;border-radius: 5px;">
+                                <input id="vocher" name="code" value="" type="text" placeholder="Nhập phiếu giảm giá">
+                                <div class="sub__vorcher">
+                                    <button type="submit" name="btn_apply_voucher" value="true">Áp dụng</button>
+                                </div>
                             </div>
-                        </div>
+                        @else
+                            <div class="pt-2 pb-2 bg-warning text-center">Hãy đăng nhập để có thể nhập mã giảm giá</div>
+                        @endif
 
                         {{-- er vc --}}
                         @if (session('er-voucher'))
@@ -204,15 +207,19 @@
                             <p>30,000đ</p>
                         </div>
 
-                        @if (session('newPrice'))
+                        @if (session('newPrice') && session('codeVoucher'))
                             <div class="content__subtotal">
-                                <span>Mã giảm giá: {{ session('codeVoucher') }}</span>
+                                <span>Mã giảm giá: {{ session('codeVoucher')->code }}</span>
+                            </div>
+                            <div class="content__subtotal">
+                                <span>Số tiền được khấu trừ: {{ session('codeVoucher')->discount }} 
+                                    {{session('codeVoucher')->category_code == 1 ? 'đ' : '%'}}</span>
                             </div>
                         @endif
                         <div class="contnet__all">
 
                             <span><b>Số tiền phải thanh tóan</b>:
-                                {{ session('newPrice') ? number_format(session('newPrice'), 0, ',') : number_format((int)$total + 30000, 0, ',') }}
+                                {{ session('newPrice') ? number_format((int)session('newPrice') + 30000, 0, ',') : number_format((int)$total + 30000, 0, ',') }}
                                 đ</span>
 
                             <p></p>

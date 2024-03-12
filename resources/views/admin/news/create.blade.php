@@ -33,10 +33,7 @@
                         @error('image')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror
-                        <div id="displayImg" class="" style="width: 200px;">
-
-                        </div>
-
+                        <div id="displayImg" class="" style="width: 200px;"></div>
                     </div>
                     <div class="form-group">
                         <label for="">Mô tả ngắn</label>

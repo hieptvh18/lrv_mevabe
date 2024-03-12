@@ -36,7 +36,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ route('brand.index') }}">
                 <i class="far fa-chart-bar menu-icon"></i>
-                <span class="menu-title {{ Route::is('brand.index') ? 'active-link' : '' }}">Thuong hieu</span>
+                <span class="menu-title {{ Route::is('brand.index') ? 'active-link' : '' }}">Thương hiệu</span>
             </a>
         </li>
 
@@ -63,7 +63,7 @@
             <div class="collapse" id="account">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="{{route('user.index')}}">Danh sách</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="account?action=add">Phân quyền</a>
+                    {{-- <li class="nav-item"> <a class="nav-link" href="account?action=add">Phân quyền</a> --}}
                     </li>
                 </ul>
             </div>
@@ -87,7 +87,7 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#comment" aria-expanded="false"
                 aria-controls="ui-basic">
-                <i class="far fa-newspaper menu-icon"></i>
+                <i class="far fa-comments menu-icon"></i>
                 <span class="menu-title">Bình luận</span>
                 <i class="menu-arrow"></i>
             </a>
@@ -107,7 +107,7 @@
 
         </li>
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#comment" aria-expanded="false"
                 aria-controls="ui-basic">
                 <i class="far fa-comments menu-icon"></i>
@@ -119,7 +119,7 @@
                     <li class="nav-item"> <a class="nav-link" href="comment">Tổng hợp</a></li>
                 </ul>
             </div>
-        </li>
+        </li> --}}
 
     </ul>
 </nav>

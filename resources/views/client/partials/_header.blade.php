@@ -88,7 +88,7 @@
                         <span class="icon__account"><i class="fas fa-user-circle"></i></span>
                     </a>
                     <!-- pops up login -->
-                    <div class="modal fade " role="dialog" id="box-login-register" style="z-index: 100;">
+                    {{-- <div class="modal fade " role="dialog" id="box-login-register" style="z-index: 100;">
                         <div class="modal-dialog">
                             <div class="modal-content box-content-user mt-5">
                                 <div class="modal-header" style="border:none;padding-bottom:0;">
@@ -188,7 +188,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- end modal login-->
                 @endif
                 <a href="#lang" class="lang pt-4 pb-4">
@@ -309,7 +309,15 @@
                 </li>
 
                 <div class="d-flex sub-nav_item">
-                    @foreach (\App\Models\Category::where('parent_id', 0)->get() as $category)
+                    @php
+                        $menus = \App\Models\Category::where('parent_id', 0)
+                                ->whereHas('products',function($q){
+                                    $q->where('status',1);
+                                })
+                                ->get();
+                    @endphp
+
+                    @foreach ($menus as $category)
                         <li class="sub-nav_item-li" data-id="{{ $category->id }}">
                             <a href="{{ route('client.shop.category', $category->slug) }}"
                                 class="{{ request()->is('cua-hang/' . $category->slug) ? 'menu-active' : '' }}">
@@ -318,11 +326,11 @@
                             {{-- none child menu --}}
                         </li>
                     @endforeach
-                    <div class="header-menu-container__child-menu hidden">
+                    {{-- <div class="header-menu-container__child-menu hidden">
                         <div class="header-menu__child-menu" >
                             <img src="{{asset('assets/images/layout/loading-dark.gif')}}" class="d-flex justify-content-center" width="20px" height="20px" alt="" style="margin: 0 auto;">
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
                 @if (session('admin'))

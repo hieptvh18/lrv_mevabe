@@ -99,11 +99,11 @@ class CheckoutController extends Controller
                 } else {
                     // vnd
                     $newPrice = $total - $voucherExist->discount;
-                    $newPrice < 0 ? $newPrice = 0 : $newPrice;
+                    $newPrice = $newPrice < 0 ? 0 : $newPrice;
                     session()->put('newPrice', $newPrice);
                 }
 
-                session()->put('codeVoucher', $voucherExist->code);
+                session()->put('codeVoucher', $voucherExist);
                 return back();
             } else {
                 return back()->with('er-voucher', 'Mã không chính xác!');
@@ -132,7 +132,7 @@ class CheckoutController extends Controller
                 $bill->payment_amount = $request->total;
                 $bill->status = 0;
                 if (session('codeVoucher')) {
-                    $bill->code_voucher = session('codeVoucher');
+                    $bill->code_voucher = session('codeVoucher')->code;
                 }
                 $bill->save();
 
@@ -156,7 +156,7 @@ class CheckoutController extends Controller
                 // check used voucher
                 if (session('codeVoucher')) {
                     // luu tt vo voucherUser
-                    $voucherExist = Voucher::where('code', session('codeVoucher'))->first();
+                    $voucherExist = Voucher::where('code', session('codeVoucher')->code)->first();
                     VoucherUser::create([
                         "user_id" => Auth::user()->id,
                         "voucher_id" => $voucherExist->id,

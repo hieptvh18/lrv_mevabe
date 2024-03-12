@@ -42,11 +42,15 @@ class BrandController extends Controller
         //
         $request->validate([
             "name"=>"required|unique:brands",
-            "avatar" => "required|image|mimes:jpg,png,jpeg|max:2040",
+            "avatar" => "nullable|image|mimes:jpg,png,jpeg|max:2040",
         ]);
 
-        $fileName = uniqid() . '-brand' . time() . '.' . $request->avatar->extension();
-        $request->file('avatar')->move(public_path('uploads'), $fileName);
+        $fileName = '';
+
+        if($request->file('avatar')){
+            $fileName = uniqid() . '-brand' . time() . '.' . $request->avatar->extension();
+            $request->file('avatar')->move(public_path('uploads'), $fileName);
+        }
 
         $brand = new Brand();
         $brand->name = $request->name;

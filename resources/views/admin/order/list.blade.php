@@ -18,7 +18,7 @@
             <div class="table-responsive">
                 <div class="d-flex justify-content-between">
                     <form action="" method="GET" class="mt-3">
-                        <input type="search" value="{{ old('keyword') }}" name="keyword" placeholder="Enter Order ID"
+                        <input type="search" value="{{ old('keyword') }}" name="keyword" placeholder="Tìm theo mã đơn hàng"
                             class="form-control-sm" required style="height:33px;border:1px solid #ccc;border-radius:10px">
                         <button class="btn btn-outline-info btn-sm">Tìm kiếm</button>
                     </form>
@@ -34,7 +34,7 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>ID </th>
+                            <th>Mã đơn hàng </th>
                             <th>Tên </th>
                             <th>Tổng tiền <a href="?_sort=true&column=total_price&type={{ $type }}"><i
                                         class="fa fa-sort ml-2" aria-hidden="true"></a></th>

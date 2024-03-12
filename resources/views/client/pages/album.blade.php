@@ -52,29 +52,27 @@
 
     <div id="lightgallery">
 
-      <a href="{{asset('assets/images/album/')}}/1.jpg"><img src="{{asset('assets/images/album/')}}/1.jpg" /></a>
+      <a href="{{asset('assets/images/album/')}}/1-1.jpg"><img src="{{asset('assets/images/album/')}}/1-1.jpg" /></a>
 
-      <a href="{{asset('assets/images/album/')}}/2.jpg"><img src="{{asset('assets/images/album/')}}/2.jpg" /></a>
+      <a href="{{asset('assets/images/album/')}}/1-2.jpg"><img src="{{asset('assets/images/album/')}}/1-2.jpg" /></a>
       
-      <a href="{{asset('assets/images/album/')}}/3.jpg"><img src="{{asset('assets/images/album/')}}/3.jpg" /></a>
+      <a href="{{asset('assets/images/album/')}}/1-3.jpg"><img src="{{asset('assets/images/album/')}}/1-3.jpg" /></a>
 
-      <a href="{{asset('assets/images/album/')}}/4.jpg"><img src="{{asset('assets/images/album/')}}/4.jpg" /></a>
+      <a href="{{asset('assets/images/album/')}}/1-4.jpg"><img src="{{asset('assets/images/album/')}}/1-4.jpg" /></a>
 
-      <a href="{{asset('assets/images/album/')}}/5.jpg"><img src="{{asset('assets/images/album/')}}/5.jpg" /></a>
+      <a href="{{asset('assets/images/album/')}}/1-5.jpg"><img src="{{asset('assets/images/album/')}}/1-5.jpg" /></a>
 
-      <a href="{{asset('assets/images/album/')}}/6.jpg"><img src="{{asset('assets/images/album/')}}/6.jpg" /></a>
+      <a href="{{asset('assets/images/album/')}}/1-6.jpg"><img src="{{asset('assets/images/album/')}}/1-6.jpg" /></a>
 
-      <a href="{{asset('assets/images/album/')}}/7.jpg"><img src="{{asset('assets/images/album/')}}/7.jpg" /></a>
+      <a href="{{asset('assets/images/album/')}}/1-7.jpg"><img src="{{asset('assets/images/album/')}}/1-7.jpg" /></a>
 
-      <a href="{{asset('assets/images/album/')}}/8.jpg"><img src="{{asset('assets/images/album/')}}/8.jpg" /></a>
+      <a href="{{asset('assets/images/album/')}}/1-8.jpg"><img src="{{asset('assets/images/album/')}}/1-8.jpg" /></a>
 
-      <a href="{{asset('assets/images/album/')}}/9.jpg"><img src="{{asset('assets/images/album/')}}/9.jpg" /></a>
+      <a href="{{asset('assets/images/album/')}}/1-2.jpg"><img src="{{asset('assets/images/album/')}}/1-2.jpg" /></a>
+      
+      <a href="{{asset('assets/images/album/')}}/1-3.jpg"><img src="{{asset('assets/images/album/')}}/1-3.jpg" /></a>
 
-      <a href="{{asset('assets/images/album/')}}/10.jpg"><img src="{{asset('assets/images/album/')}}/10.jpg" /></a>
-
-      <a href="{{asset('assets/images/album/')}}/11.jpg"><img src="{{asset('assets/images/album/')}}/11.jpg" /></a>
-
-      <a href="{{asset('assets/images/album/')}}/12.jpg"><img src="{{asset('assets/images/album/')}}/12.jpg" /></a>
+      <a href="{{asset('assets/images/album/')}}/1-4.jpg"><img src="{{asset('assets/images/album/')}}/1-4.jpg" /></a>
 
       <a href="{{asset('assets/images/album/')}}/13.jpg"><img src="{{asset('assets/images/album/')}}/13.jpg" /></a>
 

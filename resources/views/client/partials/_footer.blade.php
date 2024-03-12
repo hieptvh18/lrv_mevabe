@@ -3,22 +3,22 @@
         <div class="footer-top">
             <div class="footer-item">
                 <span class="footer-top__title text-title">Về chúng tôi</span>
-                <p class="mt-2">Cho các đề nghị độc quyền!</p>
+                <p class="mt-2 text-light">Cho các đề nghị độc quyền!</p>
             </div>
             <div class="footer-item">
                 <form action="" class="register_footer">
                     <input type="email" placeholder="Địa chỉ email" name="email">
-                    <button type="submit" name="btn_register">Đăng kí</button>
+                    <button type="submit" name="btn_register" style="background-color:#000;">Đăng kí</button>
                 </form>
             </div>
             <div class="footer-social">
-                <a href="{{\App\Models\WebSetting::first()->fb_url}}"><i class="fa fa-facebook" aria-hidden="true"></i>
+                <a class="text-light" href="{{\App\Models\WebSetting::first()->fb_url}}"><i class="fa fa-facebook" aria-hidden="true"></i>
                 </a>
-                <a href="{{\App\Models\WebSetting::first()->insta_url}}"><i class="fa fa-instagram" aria-hidden="true"></i>
+                <a class="text-light" href="{{\App\Models\WebSetting::first()->insta_url}}"><i class="fa fa-instagram" aria-hidden="true"></i>
                 </a>
-                <a href="{{\App\Models\WebSetting::first()->twitter_url}}"><i class="fa fa-twitter" aria-hidden="true"></i>
+                <a class="text-light" href="{{\App\Models\WebSetting::first()->twitter_url}}"><i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
-                <a href="{{\App\Models\WebSetting::first()->pinterest_url}}"><i class="fa fa-pinterest" aria-hidden="true"></i>
+                <a class="text-light" href="{{\App\Models\WebSetting::first()->pinterest_url}}"><i class="fa fa-pinterest" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
@@ -52,13 +52,13 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="left">
+            <div class="left" style="color: #ccc !important;">
                 MissCare.com &copy; {{date('Y')}} . All rights reserved
             </div>
             <div class="right">
-                <a href="{{route('client.termsofuse')}}">Điều khoản sử dụng</a>
-                <a href="{{route('client.termsofuse')}}">Chính sách bảo mật</a>
-                <a href="{{route('client.termsofuse')}}">
+                <a href="{{route('client.termsofuse')}}" style="color: #ccc !important;">Điều khoản sử dụng</a>
+                <a href="{{route('client.termsofuse')}}" style="color: #ccc !important;">Chính sách bảo mật</a>
+                <a href="{{route('client.termsofuse')}}" style="color: #ccc !important;">
                     <i class="fa fa-universal-access" aria-hidden="true"></i>
                     Hiển thị Công cụ Hỗ trợ Tiếp cận</a>
             </div>

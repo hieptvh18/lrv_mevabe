@@ -199,7 +199,7 @@
                             </div>
                         </div>
                         <div class="slider_album_boxImg">
-                            <img src="{{ asset('assets/images/album/1.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/album/1-1.jpg') }}" alt="">
                         </div>
 
                     </a>
@@ -213,7 +213,7 @@
                             </div>
                         </div>
                         <div class="slider_album_boxImg">
-                            <img src="{{ asset('assets/images/album/3.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/album/1-2.jpg') }}" alt="">
                         </div>
 
                     </a>
@@ -227,7 +227,7 @@
                             </div>
                         </div>
                         <div class="slider_album_boxImg">
-                            <img src="{{ asset('assets/images/album/4.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/album/1-3.jpg') }}" alt="">
                         </div>
                     </a>
                     <a href="{{ route('client.social') }}#lg=1&slide=11" class="album_link">
@@ -240,7 +240,7 @@
                             </div>
                         </div>
                         <div class="slider_album_boxImg">
-                            <img src="{{ asset('assets/images/album/12.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/album/1-4.jpg') }}" alt="">
                         </div>
                     </a>
                     <a href="{{ route('client.social') }}#lg=1&slide=1" class="album_link">
@@ -253,7 +253,7 @@
                             </div>
                         </div>
                         <div class="slider_album_boxImg">
-                            <img src="{{ asset('assets/images/album/2.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/album/1-5.jpg') }}" alt="">
                         </div>
                     </a>
                     <a href="{{ route('client.social') }}#lg=1&slide=8" class="album_link">
@@ -266,7 +266,7 @@
                             </div>
                         </div>
                         <div class="slider_album_boxImg">
-                            <img src="{{ asset('assets/images/album/15.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/album/1-6.jpg') }}" alt="">
                         </div>
                     </a>
                     <a href="{{ route('client.social') }}#lg=1&slide=15" class="album_link">
@@ -279,7 +279,7 @@
                             </div>
                         </div>
                         <div class="slider_album_boxImg">
-                            <img src="{{ asset('assets/images/album/17.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/album/1-7.jpg') }}" alt="">
                         </div>
                     </a>
                     <a href="{{ route('client.social') }}#lg=1&slide=17" class="album_link">
@@ -292,7 +292,7 @@
                             </div>
                         </div>
                         <div class="slider_album_boxImg">
-                            <img src="{{ asset('assets/images/album/19.jpg') }}" alt="">
+                            <img src="{{ asset('assets/images/album/1-8.jpg') }}" alt="">
                         </div>
                     </a>
                     <a href="{{ route('client.social') }}#lg=1&slide=16" class="album_link">
