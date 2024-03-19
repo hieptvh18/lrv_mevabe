@@ -116,7 +116,10 @@
                             <input type="date" name="start_date" class="form-control form-control-sm mr-2" required>
                             <span class="mr-2">Đến</span>
                             <input type="date" name="end_date" class="form-control form-control-sm" required>
-                            <button type="button" id="btnFilter" class="btn btn-sm btn-secondary">Lọc</button>
+                            <button type="button" id="btnFilter" class="btn" style="border: 1px solid #ccc;
+                            border-radius: 5px;
+                            margin-left: 10px;
+                            padding: 12px;">Lọc</button>
                         </div>
                     </form>
                     <canvas id="doanhthu" width="400" height="150"></canvas>

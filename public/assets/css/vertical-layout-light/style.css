@@ -28464,6 +28464,10 @@ div.tagsinput span.tag a {
   flex-grow: 1;
 }
 
+.content-wrapper .card{
+  border-radius: 5px !important;
+}
+
 @media (max-width: 767px) {
   .content-wrapper {
     padding: 1.5rem 1.5rem;
@@ -28513,7 +28517,7 @@ div.tagsinput span.tag a {
   white-space: nowrap;
   padding: 0.8125rem 1.937rem 0.8125rem 1rem;
   color: #6C7383;
-  border-radius: 8px;
+  border-radius: 5px;
   -webkit-transition-duration: 0.45s;
   -moz-transition-duration: 0.45s;
   -o-transition-duration: 0.45s;
@@ -28595,7 +28599,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav .nav-item.active {
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 .sidebar .nav .nav-item.active > .nav-link {

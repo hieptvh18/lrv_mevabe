@@ -20,7 +20,7 @@
                 <div class="dropdown ml-2 mr-2">
                     <button type="button" class="btn btn-sm btn-outline-primary dropdown-toggle" data-toggle="dropdown"
                         id="dropDownCate" aria-expanded="false">
-                        Filter by category
+                        Lọc theo danh mục
                     </button>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
                         aria-labelledby="notificationDropdown">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <form action="" method="GET">
-                    <input type="search" value="{{ old('keyword') }}" name="keyword" placeholder="Enter key search"
+                    <input type="search" value="{{ old('keyword') }}" name="keyword" placeholder="Tìm theo ID, tên"
                         class="form-control-sm" required style="height:33px;border:1px solid #ccc;border-radius:10px">
                     <button class="btn btn-outline-info btn-sm">Tìm kiếm</button>
                 </form>

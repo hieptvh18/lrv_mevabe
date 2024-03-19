@@ -5,7 +5,7 @@
     {{-- token laravel --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- ico -->
-    <link rel="shortcut icon" type="image/png" href="{{asset('assets/images/layout/kooding-app-icon.ico')}}"/>
+    <link rel="shortcut icon" type="image/png" href="{{asset('assets/images/logo.ico')}}"/>
     <!-- lib album -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.8.3/dist/css/lightgallery.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">

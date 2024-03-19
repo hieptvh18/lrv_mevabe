@@ -204,7 +204,7 @@
                 </div>
                 <div class="box-cart pt-4 pb-4">
                     <a href="{{ route('client.cart') }}" class="cart">
-                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     </a>
                     <div class="notifi notifi-cart">
                     @if(Auth::check())
@@ -216,18 +216,19 @@
                         @endif
                     </div>
                     <!-- start popup-cart -->
-                    {{--
+                    
                     <div class="pop-cart">
                         @if (session()->has('carts'))
                             <div class="pop-cart__top">
                                 <div class="left">
                                     <div class="notifi-cart">
+                                        Mặt hàng
                                         @if (session('carts'))
                                             {{ count(session('carts')) }}
                                         @else
                                             0
                                         @endif
-                                        <i class="fa fa-shopping-bag " aria-hidden="true"></i>
+                                        {{-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> --}}
                                     </div>
                                 </div>
                                 <div class="right">
@@ -294,11 +295,11 @@
                                         ngay</a>
                                 </div>
                                 <div class="">
-                                    <img src="{{ asset('assets') }}/images/layout/empty-orders.jpg" alt="">
+                                    <img src="{{ asset('assets') }}/images/layout/empty-orders.jpg" alt="Ảnh sản phẩm">
                                 </div>
                             </div>
                         @endif
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>

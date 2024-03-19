@@ -19,8 +19,8 @@ class FirstAccess
     {
         $cookieAlert = Cookie::get('firstAccess');
         if(!$cookieAlert){
-            echo "<script>alert('Account admin: hieptvh18@gmail.com Password: 123123')</script>";  
-            Cookie::queue('firstAccess','welcome to kooding',43200);
+            // echo "<script>alert('Account admin: hieptvh18@gmail.com Password: 123123')</script>";  
+            // Cookie::queue('firstAccess','welcome to kooding',43200);
         } 
         return $next($request);
     }

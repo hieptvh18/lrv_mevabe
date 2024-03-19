@@ -37,7 +37,7 @@
                                             <div class="cart__left__img">
                                                 <a
                                                     href="{{ route('client.shop.detail', ['slug' => $item['slug'], 'id' => $item['product_id']]) }}">
-                                                    <img src="{{ asset('uploads') }}/{{ $item['avatar'] }}" alt=""
+                                                    <img src="{{ asset('uploads') }}/{{ $item['avatar'] }}" alt="sản phẩm"
                                                         width="100%"></a>
                                             </div>
                                             <div class="cart__left__info">

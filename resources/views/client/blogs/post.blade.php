@@ -12,7 +12,7 @@
         </p>
     </div>
     <div class="conten_news">
-        {{$post->content}}
+        {!!$post->content!!}
     </div>
     <div class="graybg">
         <div class="container">

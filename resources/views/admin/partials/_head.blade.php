@@ -2,7 +2,7 @@
   {{-- fixed content with content security policy # --}}
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <!-- ico -->
-    <link rel="shortcut icon" type="image/png" href="{{asset('assets/images/layout/kooding-app-icon.ico')}}" />
+    <link rel="shortcut icon" type="image/png" href="{{asset('assets/images/logo.ico')}}" />
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <!-- Required meta tags -->

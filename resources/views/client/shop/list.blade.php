@@ -108,7 +108,7 @@
                                 </span>
                             </div>
                             <div class="proC__sale">
-                                @if ($product->discount)
+                                @if ($product->discount && number_format(($product->discount / $product->price) * 100, 0, ','))
                                 <p class="item__sale">Sale
                                     {{ number_format(($product->discount / $product->price) * 100, 0, ',') }}%</p>
                                 @endif

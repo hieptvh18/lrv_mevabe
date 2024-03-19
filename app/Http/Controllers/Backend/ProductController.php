@@ -38,7 +38,9 @@ class ProductController extends Controller
         if($request->keyword){
             $title = "Kết quả tìm kiếm: " . "'".$request->keyword."'";
 
-            $products = $products->where('name','like','%'.$request->keyword.'%');
+            $products = $products
+                ->where('id', $request->keyword)
+                ->orWhere('name','like','%'.$request->keyword.'%');
         }
 
         // filter by category

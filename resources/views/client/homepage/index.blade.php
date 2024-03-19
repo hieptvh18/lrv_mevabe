@@ -61,10 +61,15 @@
                 <div class="pro-news-slider slide-news" id="slide-top-pros">
 
                     @foreach ($productsNew as $pro)
-                        <a href="{{ route('client.shop.detail', ['slug' => $pro->slug, 'id' => $pro->id]) }}"
-                            class="pro-news-item">
-                            <img src="{{ $pro->avatar ? asset('uploads/' . $pro->avatar) : asset('images/layout/default.jpg') }}"
+                    <a href="{{ route('client.shop.detail', ['slug' => $pro->slug, 'id' => $pro->id]) }}"
+                        class="pro-news-item">
+                            {{-- <div class="mask-description">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vitae eveniet vel voluptatem itaque necessitatibus culpa consequuntur iste unde aliquid placeat...
+                            </div> --}}
+                            <div class="item-avatar">
+                                <img src="{{ $pro->avatar ? asset('uploads/' . $pro->avatar) : asset('images/layout/default.jpg') }}"
                                 alt="">
+                            </div>
                             <div class="">
                                 <div class="pro-name bg-white pt-2 text-center">
                                     {{ $pro->name }}
@@ -150,7 +155,9 @@
                         {{-- loop top view --}}
                         <a href="{{ route('client.shop.detail', ['slug' => $pro->slug, 'id' => $pro->id]) }}"
                             class="pro-news-item">
-                            <img src="{{ asset('uploads') }}/{{ $pro->avatar }}" alt="">
+                            <div class="item-avatar">
+                                <img src="{{ asset('uploads') }}/{{ $pro->avatar }}" alt="">
+                            </div>
                             <div class="pro-name bg-white pt-2 text-center">
                                 {{ $pro->name }}
                             </div>
