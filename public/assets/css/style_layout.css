@@ -244,7 +244,11 @@ body ::selection {
 .box-favorite-pro,.box-cart{
     position: relative;
 }
-.box-cart:hover .pop-cart{
+/* .box-cart:hover .pop-cart{
+    display: block;
+    transition: 3s ease-in-out;
+} */
+.box-cart .pop-cart.active{
     display: block;
     transition: 3s ease-in-out;
 }

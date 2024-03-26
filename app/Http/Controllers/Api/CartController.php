@@ -22,4 +22,25 @@ class CartController extends Controller
         }
         return 0;
     }
+
+    // get current cart item
+    public function getItems(Request $request){
+        try{
+            $items = array();
+            if(auth()->check()){
+                $items = Cart::where('user_id',auth()->id())->get();
+            }
+            return response()->json([
+                'success'=>false,
+                'items'=>$items,
+                'message'=>'success'
+            ]);
+        }catch(\Throwable $th){
+            return response()->json([
+                'success'=>false,
+                'items'=>[],
+                'message'=>$th->getMessage()
+            ]);
+        }
+    }
 }

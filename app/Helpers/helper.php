@@ -1,6 +1,8 @@
 <?php
 use App\Models\Category;
 use App\Models\AttributeValue;
+use App\Models\Product;
+use App\Models\Cart;
 
 // func lay thuoc tinh san pham tu danh muc
 if (!function_exists('getAttrByCate')) {
@@ -44,6 +46,44 @@ if(!function_exists('getAttributeValue')){
         $result = AttributeValue::where('id',$id)->first();
 
         return $result;
+    }
+}
+
+// formated cart Data
+if(!function_exists('formatCartData')){
+    function formatCartData(){
+        
+        $carts = session('carts') ?? [];
+
+        if(auth()->check()){
+            $carts = Cart::where('user_id',auth()->id())->get()->toArray();
+        }
+
+        $resp = [];
+        $totalPrice = 0;
+        if(!empty($carts)){
+            foreach($carts as $key=>$cart){
+                $product = Product::find($cart['product_id']);
+                $resp[$key]['product_id'] = $cart['product_id'];
+                $resp[$key]['product_name'] = $product->name;
+                $resp[$key]['product_price'] = $product->price;
+                $resp[$key]['product_discount'] = $product->discount;
+                $resp[$key]['product_slug'] = $product->slug;
+                $resp[$key]['product_avatar'] = asset('uploads').'/'.$product->avatar;
+                $resp[$key]['quantity'] = $cart['quantity'];
+                $resp[$key]['product_color'] = AttributeValue::find($cart['color_id'])->name;
+                $resp[$key]['product_size'] = AttributeValue::find($cart['size_id'])->name;
+                $resp[$key]['final_price'] = ($product->price - $product->discount) * (int)$cart['quantity'];
+                
+                $totalPrice += $resp[$key]['final_price'];
+            }
+        }   
+        
+        return [
+            'cartData'=>$resp,
+            'totalPrice'=>$totalPrice,
+            'totalItems'=>count($resp)
+        ];
     }
 }
 

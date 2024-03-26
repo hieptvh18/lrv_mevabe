@@ -203,7 +203,7 @@
                     </div>
                 </div>
                 <div class="box-cart pt-4 pb-4">
-                    <a href="{{ route('client.cart') }}" class="cart">
+                    <a href="{{ route('client.cart') }}" class="cart cart-btn-icon">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     </a>
                     <div class="notifi notifi-cart">
@@ -218,17 +218,12 @@
                     <!-- start popup-cart -->
                     
                     <div class="pop-cart">
-                        @if (session()->has('carts'))
+                        <div class="template-cart__exists">
                             <div class="pop-cart__top">
                                 <div class="left">
                                     <div class="notifi-cart">
                                         Mặt hàng
-                                        @if (session('carts'))
-                                            {{ count(session('carts')) }}
-                                        @else
-                                            0
-                                        @endif
-                                        {{-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> --}}
+                                        <span class="total-cart-items"></span>
                                     </div>
                                 </div>
                                 <div class="right">
@@ -238,67 +233,25 @@
                                 </div>
                             </div>
 
-                            @php
-                                $total = 0;
-                            @endphp
-                            @foreach (session('carts') as $key => $item)
-                                @php $thanhtien = ($item['price'] - $item['discount']) * $item['quantity'] @endphp
-                                <div class="pop-cart__main row p-3">
-                                    <div class="col-3 col-md-3">
-                                        <a
-                                            href="{{ route('client.shop.detail', ['slug' => $item['slug'], 'id' => $item['id']]) }}">
-                                            <img src="{{ asset('uploads') }}/{{ $item['avatar'] }}" alt=""
-                                                width="100%">
-                                        </a>
-                                    </div>
-                                    <div class="col-6 col-md-6">
-                                        <div class="pro-name mb-2">
-                                            {{ \App\Models\Product::find($item['product_id'])->name }}</div>
-                                        <div class="desc">
-                                            {{ \App\Models\AttributeValue::find($item['color_id'])->name }} |
-                                            {{ \App\Models\AttributeValue::find($item['size_id'])->name }}
-                                            | SL {{ $item['quantity'] }}
-                                        </div>
-                                    </div>
-                                    <div class="col-3 col-md-3 cart-option">
-                                        <div class="pro-price mb-5">{{ number_format($thanhtien, 0, ',') }}đ</div>
-                                        <a href="{{ route('client.cart.remove', $item['id']) }}" onclick="
-                                                    event.preventDefault();
-                                                    document.forms['formFakeRemoveCart'].submit();
-                                                " class="text-danger">Xóa</a>
-                                        
-                                        <form action="{{ route('client.cart.remove', $item['id']) }}"
-                                            name="formFakeRemoveCart" method="post">
-                                            @csrf
-                                            @method('delete')
-                                        </form>
-
-                                    </div>
-                                </div>
-                                @php
-                                    $total += $thanhtien;
-                                @endphp
-                            @endforeach
-                            <input type="hidden" name="total" value="{{ $total }}">
+                            <div class="pop-cart-items"></div>
 
                             <div class="pop-cart__bottom">
                                 <a href="{{ route('client.checkout') }}" class="text-white bg-secondary">Thanh
                                     toán</a>
                                 <a href="{{ route('client.cart') }}" class="">Vào giỏ hàng</a>
-
                             </div>
-                        @else
-                            <div class="DH__content__body">
-                                <div class="">
-                                    <h3 class="" style="color:#FFBC7F;">Giỏ hàng của bạn đang rỗng!</h3>
-                                    <a href="{{ route('client.shop') }}" class="text-primary text-center">Mua sắm
-                                        ngay</a>
-                                </div>
-                                <div class="">
-                                    <img src="{{ asset('assets') }}/images/layout/empty-orders.jpg" alt="Ảnh sản phẩm">
-                                </div>
+                        </div>
+                        
+                        <div class="DH__content__body template-cart__empty">
+                            <div class="">
+                                <h3 class="" style="color:#FFBC7F;">Giỏ hàng của bạn đang rỗng!</h3>
+                                <a href="{{ route('client.shop') }}" class="text-primary text-center">Mua sắm
+                                    ngay</a>
                             </div>
-                        @endif
+                            <div class="">
+                                <img src="{{ asset('assets') }}/images/layout/empty-orders.jpg" alt="Ảnh sản phẩm">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -362,51 +315,104 @@
 {{-- script --}}
 
 <script>
+    let cartItems = {!! json_encode(formatCartData()) !!};
+
     $(document).ready(function() {
         const subNavItemsEl = document.querySelectorAll('.sub-nav_item-li');
         const childMenuEl = document.querySelector('.header-menu__child-menu');
+        const cartBtn = document.querySelector('.cart-btn-icon');
+        const cartPopup = document.querySelector('.pop-cart');
+        let cartPopupLoading = false;
+        const countCartItemEl = document.querySelector('.notifi-cart');
+        const templateCartExistsEl = document.querySelector('.template-cart__exists');
+        const templateCartEmptyEl = document.querySelector('.template-cart__empty');
+        const cartItemsEl = document.querySelector('.pop-cart-items')
+        const totalCartItems = $('.total-cart-items');
 
-        // use axios get data tu api category
-        axios.get('/api/categories')
-            .then(res => {
-                const dataCategories = res.data;
-                const childCategories = [];
-                // loop data => respone ve child category of dataid ma minh hover
-                subNavItemsEl.forEach(itemEl => {
-                    itemEl.onmouseover = function() {
-                        const id = this.dataset.id;
+        // active cart popup
+        cartBtn.addEventListener('click', function(e){
+            e.preventDefault();
+            cartPopupLoading = true;
+            
+            if(cartItems && cartItems.cartData.length){
+                templateCartExistsEl.style.display = 'block';
+                templateCartEmptyEl.style.display = 'none';
 
-                        dataCategories.forEach(val => {
-                            if (val.parent_id == id) {
-                                childCategories.push(val);
-                            }
-                        });
-
-                        // map + inner html childCate
-                        html = '';
-                        childCategories.forEach(val => {
-
-                            html += `
-                            <div class="child-menu_item">
-                                    <div class="item-title"><a href="/cua-hang/${val.slug}">${val.name}</a></div>
-                                   
-                                </div>
-                        `;
-                        });
-
-                        // render success -> remove
-                        childMenuEl.innerHTML = html;
-                        childCategories.length = 0;
-                    }
+                let cartItemHtml = ``;
+                cartItems.cartData.forEach((val)=>{
+                    cartItemHtml += `
+                    <div class="pop-cart__main row p-3">
+                        <div class="col-3 col-md-3">
+                            <a
+                                href="/cua-hang/${val.product_slug}/${val.product_id}">
+                                <img src="${val.product_avatar}" alt="${val.product_avatar}"
+                                    width="100%">
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-6">
+                            <div class="pro-name mb-2">${val.product_name}</div>
+                            <div class="desc">
+                                ${val.product_color} |
+                                ${val.product_size}
+                                | SL ${val.quantity}
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-3 cart-option">
+                            <div class="pro-price mb-5">${val.final_price}đ</div>
+                        </div>
+                    </div>
+                    `
                 });
 
-            })
-            .catch(er => {
-                console.log(er);
-            })
+                cartItemsEl.innerHTML = cartItemHtml;
+                // inner total cart pop
+                $('.total-price-pop').html(cartItems.totalPrice)
+                totalCartItems.html(cartItems.totalItems);
+            }else{
+                templateCartExistsEl.style.display = 'none';
+                templateCartEmptyEl.style.display = 'block';
+            }
+            cartPopup.classList.toggle('active');
+        })
 
-        // inner total cart pop
-        $('.total-price-pop').html($('input[name="total"]').val())
+        // use axios get data tu api category
+        // axios.get('/api/frontend/categories')
+        //     .then(res => {
+        //         const dataCategories = res.data;
+        //         const childCategories = [];
+        //         // loop data => respone ve child category of dataid ma minh hover
+        //         subNavItemsEl.forEach(itemEl => {
+        //             itemEl.onmouseover = function() {
+        //                 const id = this.dataset.id;
+
+        //                 dataCategories.forEach(val => {
+        //                     if (val.parent_id == id) {
+        //                         childCategories.push(val);
+        //                     }
+        //                 });
+
+        //                 // map + inner html childCate
+        //                 html = '';
+        //                 childCategories.forEach(val => {
+
+        //                     html += `
+        //                     <div class="child-menu_item">
+        //                             <div class="item-title"><a href="/cua-hang/${val.slug}">${val.name}</a></div>
+                                   
+        //                         </div>
+        //                 `;
+        //                 });
+
+        //                 // render success -> remove
+        //                 childMenuEl.innerHTML = html;
+        //                 childCategories.length = 0;
+        //             }
+        //         });
+
+        //     })
+        //     .catch(er => {
+        //         console.log(er);
+        //     })
 
     })
 </script>

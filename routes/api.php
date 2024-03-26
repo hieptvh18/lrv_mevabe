@@ -25,6 +25,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::group(['prefix'=>'frontend'], function(){
+    // carts
+    Route::controller(CartController::class)->group(function(){
+        Route::get('cart/cart-items','getItems');
+    });
+    // categories 
+    Route::get('categories',[CategoryController::class,'index'])->name('api.category');
+});
+
 // handle ajax request
 Route::any('ajax/get-attr-value-exist',[AjaxController::class,'attrValueExist'])->name('ajax.attr-value-exist');
 Route::any('ajax/get-attr-of-category',[AjaxController::class,'getAttrOfCategory'])->name('ajax.get-attr-of-category');
@@ -43,8 +52,6 @@ Route::get('/facebook/callback',[FacebookController::class,'facebookCallback'])-
 // check exist vouvher
 Route::any('ajax/voucher-exist',[AjaxController::class,'voucherExist'])->name('ajax.voucherExist');
 
-// categories 
-Route::get('categories',[CategoryController::class,'index'])->name('api.category');
 // vouchers 
 Route::get('vouchers',[VoucherController::class,'index'])->name('api.voucher.index');
 Route::put('vouchers/{id}',[VoucherController::class,'update'])->name('api.voucher.update');
