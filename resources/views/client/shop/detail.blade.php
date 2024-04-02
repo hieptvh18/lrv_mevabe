@@ -110,7 +110,7 @@
                                 <button type="button" id="checkout_0"
                                     class="pd-checkout animate black loader btnAddCart">Thêm vào giỏ
                                     hàng</button>
-                                <span onclick="showLove()" class=" btn_add_fa">
+                                <span class=" btn_add_fa">
                                     <i class="far fa-heart"></i>
                                 </span>
                             </div>
@@ -408,7 +408,9 @@
                                         $('.btnAddCart').addClass(
                                             'btn-exist-cart');
 
-                                        // window.location.reload();
+                                        setTimeout(() => {
+                                            window.location.reload();
+                                        }, 1200);
                                     },
                                     error: function(er) {
                                         console.log(er);

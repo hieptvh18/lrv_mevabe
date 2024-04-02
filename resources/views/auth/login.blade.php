@@ -56,7 +56,7 @@
         <div class=" mb-0">
             <div class="d-flex justify-content-between">
                 <button type="submit" class="btn btn-primary">
-                    {{ __('Login') }}
+                    {{ __('Đăng nhập') }}
                 </button>
                 {{-- @if (array_key_exists('checkout',request()->all()))
                     <a href="/checkout?customer=guest" class="btn btn-primary">

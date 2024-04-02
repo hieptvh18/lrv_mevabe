@@ -194,14 +194,14 @@
                 <a href="#lang" class="lang pt-4 pb-4">
                     <img src="{{ asset('assets/images/layout/vietnam.png') }}" alt="">
                 </a>
-                <div class="box-favorite-pro pt-4 pb-4">
+                {{-- <div class="box-favorite-pro pt-4 pb-4">
                     <a href="san-pham-yeu-thich" class="favorite-pro">
                         <i class="fa fa-heart" aria-hidden="true"></i>
                     </a>
                     <div class="notifi">
                         1
                     </div>
-                </div>
+                </div> --}}
                 <div class="box-cart pt-4 pb-4">
                     <a href="{{ route('client.cart') }}" class="cart cart-btn-icon">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -229,7 +229,6 @@
                                 <div class="right">
                                     <span class="total">Tổng tiền:</span>
                                     <span class="total-price-pop"></span>
-                                    <span>đ</span>
                                 </div>
                             </div>
 
@@ -316,6 +315,7 @@
 
 <script>
     let cartItems = {!! json_encode(formatCartData()) !!};
+    console.log(cartItems);
 
     $(document).ready(function() {
         const subNavItemsEl = document.querySelectorAll('.sub-nav_item-li');
@@ -334,18 +334,20 @@
             e.preventDefault();
             cartPopupLoading = true;
             
-            if(cartItems && cartItems.cartData.length){
+            if(cartItems && Object.keys(cartItems).length){
                 templateCartExistsEl.style.display = 'block';
                 templateCartEmptyEl.style.display = 'none';
 
                 let cartItemHtml = ``;
-                cartItems.cartData.forEach((val)=>{
+
+                const arr = Object.keys(cartItems.cartData).map(key => cartItems.cartData[key]);
+                arr.forEach((val)=>{
                     cartItemHtml += `
                     <div class="pop-cart__main row p-3">
                         <div class="col-3 col-md-3">
                             <a
                                 href="/cua-hang/${val.product_slug}/${val.product_id}">
-                                <img src="${val.product_avatar}" alt="${val.product_avatar}"
+                                <img src="${val.product_avatar}" alt="${val.product_name}"
                                     width="100%">
                             </a>
                         </div>
@@ -358,7 +360,7 @@
                             </div>
                         </div>
                         <div class="col-3 col-md-3 cart-option">
-                            <div class="pro-price mb-5">${val.final_price}đ</div>
+                            <div class="pro-price mb-5">${formatPrice(val.final_price)}</div>
                         </div>
                     </div>
                     `
@@ -366,14 +368,37 @@
 
                 cartItemsEl.innerHTML = cartItemHtml;
                 // inner total cart pop
-                $('.total-price-pop').html(cartItems.totalPrice)
+                $('.total-price-pop').html(formatPrice(cartItems.totalPrice))
                 totalCartItems.html(cartItems.totalItems);
             }else{
                 templateCartExistsEl.style.display = 'none';
                 templateCartEmptyEl.style.display = 'block';
             }
             cartPopup.classList.toggle('active');
-        })
+        });
+
+        function formatPrice(price, currencySymbol) {
+            // Ensure price is a number
+            if (typeof price !== 'number') {
+                throw new TypeError('Price must be a number');
+            }
+
+            // Set default currency symbol if not provided
+            if (!currencySymbol) {
+                currencySymbol = ''; // Default currency symbol for VND
+            }
+
+            // Format the price with the provided currency symbol
+            const formatter = new Intl.NumberFormat('vi-VN', {
+                style: 'currency',
+                currency: 'VND', // Currency code for Vietnamese Dong
+                currencyDisplay: 'symbol',
+                minimumFractionDigits: 0 // VND does not have decimal fractions
+            });
+
+            // Format and return the price with the currency symbol
+            return formatter.format(price).replace('VND', currencySymbol);
+        }
 
         // use axios get data tu api category
         // axios.get('/api/frontend/categories')

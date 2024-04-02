@@ -27,11 +27,11 @@
                 <div class="footer-title text-title">
                     Các cơ sở?
                 </div>
-                <span>Thanh xuân - Hà Nội</span>
-                <span>Cầu Giấy - Hà Nội</span>
+                <span>Hòe Thị - Hà Nội</span>
+                <span>Gia Lâm - Hà Nội</span>
                 <span>Đống Đa - Hà Nội</span>
-                <span>Quận 7 - Tp HCM</span>
-                <span>Quận 1 - TP HCM</span>
+                <span>Quận 6 - Tp HCM</span>
+                <span>Bình Tân - TP HCM</span>
             </div>
             <div class="footer-item">
                 <div class="footer-title text-title">

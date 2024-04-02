@@ -56,7 +56,7 @@
                 <form class="form__filter" method="">
                     <div class="select__price">
                         <div id="price" class="filter__title">
-                            <p>Giá</p>
+                            <p>Lọc Giá</p>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="box__filter__price none">
@@ -100,7 +100,7 @@
                                     <img src="{{ asset('assets/images/layout/colorwheel-2.png') }}" alt="">
                                 </div>
                             </div>
-                            <div onclick="showLove()" class="proC__love">
+                            <div class="proC__love">
                                 <span class="proC__love__icon btn_add_fa">
                                     <!-- // xử lí nếu sp đã tồn tại favo thì cho icon heart màu đỏ -->
                                     <i class='far fa-heart'></i>

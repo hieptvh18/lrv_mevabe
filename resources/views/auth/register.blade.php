@@ -3,7 +3,7 @@
 
 @section('content')
 <h4>Đăng kí tài khoản</h4>
-    <div class="row justify-content-center">
+    <div class=" justify-content-center">
         <div class="">
             <div class="card">
 
